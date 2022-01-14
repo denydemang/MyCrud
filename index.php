@@ -294,7 +294,8 @@ $keyword = $_SESSION['keywords'];
         </div>
     </footer>
 </body>
-<script src="jsku/searchajax.js"></script>
+<!-- <script src="jsku/searchajax.js"></script> -->
+<script src="jsku/searchajaxjquery.js"></script>
 <script src="jsku/logicjurusan1.js"></script>
 <script src="jsku/logicjurusan2.js"></script>
 <script src="jsku/logicisiform2.js"></script>

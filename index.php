@@ -151,6 +151,7 @@ $mahasiswas = tampildata("SELECT * FROM `mahasiswa`
                 <div class="card-header text-center" style="background-color: #92359e">
                     <h1 class="fw-bold text-white">DATA MAHASISWA</h1>
                 </div>
+                <div class="ps-3" style="margin-bottom:-2px;"><i style="color:blue; font-size:20px;" class="fas fa-print"></i><a href="print2.php" style="color:blue; font-size:20px;">PRINT</a></div>
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div class="col-md-5 col-lg-5 col-sm-2">

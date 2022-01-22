@@ -1,21 +1,19 @@
-<?php 
+<?php session_start();
 require 'function.php';
 
 $nim = $_GET["nim"];
 
-if (hapusdata($nim) > 0 ){
+if (hapusdata($nim) > 0) {
+    $_SESSION['info'] = 'Dihapus';
     echo
     '<script>
-        alert("Data Berhasil Dihapus!");
         document.location.href="index.php";
-
     </script>';
-}else{
+} else {
+    $_SESSION['info'] = 'Gagal Dihapus';
     echo
     '<script>
-        alert("Data Gagal Dihapus!");
         document.location.href="index.php";
 
     </script>';
 }
-?>

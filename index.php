@@ -146,6 +146,10 @@ $mahasiswas = tampildata("SELECT * FROM `mahasiswa`
 
     </nav>
     <div class="container-fluid my-5">
+        <div id="info-data" data-infodata="<?php if (isset($_SESSION['info'])) {
+                                                echo $_SESSION['info'];
+                                            }
+                                            unset($_SESSION['info']); ?>"></div>
         <div class="container" style="height:900px;">
             <div class="card">
                 <div class="card-header text-center" style="background-color: #92359e">
@@ -207,10 +211,9 @@ $mahasiswas = tampildata("SELECT * FROM `mahasiswa`
                                         <td class="align-middle"><?= $mahasiswa["Prodi"] ?></td>
                                         <td class="align-middle"><?= $mahasiswa["Jurusan"] ?></td>
                                         <td class="align-middle">
-                                            <a href="hapus.php?nim=<?= $mahasiswa["Nim"] ?>" onclick="return confirm('Yakin Menghapus Data Dengan Nim <?= $mahasiswa["Nim"]; ?> yang bernama <?= $mahasiswa["Nama"]; ?> ?')">
-                                                <button class="sm btn btn-danger tombol"><i class="fas fa-trash-alt"></i>
-                                                    <span class="d-none d-md-inline d-lg-inline"> Hapus</span>
-                                                </button>
+                                            <a href="hapus.php?nim=<?= $mahasiswa['Nim'] ?>" data-namaaa="<?= $mahasiswa['Nama']; ?>" data-nimmm="<?= $mahasiswa['Nim']; ?>" class="sm btn btn-danger tombol hapusdata">
+                                                <i class="fas fa-trash-alt"></i>
+                                                Hapus
                                             </a>
                                             <button class="sm btn btn-success tombol" data-bs-target="#EditMahasiswa" data-bs-toggle="modal" id="BtnUbah" data-nim="<?= $mahasiswa['Nim']; ?>" data-nama="<?= $mahasiswa['Nama']; ?>" data-kelas="<?= $mahasiswa['Kelas']; ?>" data-email="<?= $mahasiswa['Email']; ?>" data-jk="<?= $mahasiswa['Jenis_Kelamin']; ?>" data-prodi="<?= $mahasiswa['Prodi']; ?>" data-jurusan="<?= $mahasiswa['Jurusan']; ?>"><i class="fas fa-edit"></i>
                                                 <span class="d-none d-md-inline d-lg-inline">Edit</span>
@@ -286,7 +289,8 @@ $mahasiswas = tampildata("SELECT * FROM `mahasiswa`
         </div>
     </footer>
 </body>
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="jsku/sweetalert.js"></script>
 <script src="jsku/logicjurusan1.js"></script>
 <script src="jsku/logicjurusan2.js"></script>
 <script src="jsku/logicisiform2.js"></script>
